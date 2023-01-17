@@ -49,6 +49,14 @@ const CategoryPage = (props) => {
 };
 export default CategoryPage;
 const styles = StyleSheet.create({
+  lengthCircle: {
+    width: 30,
+    height: 30,
+    borderRadius: 30,
+    backgroundColor: "#f4511e",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   lengthText: {
     color: "white",
     fontWeight: "bold",

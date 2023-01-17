@@ -4,6 +4,7 @@ import { Card, Button } from "react-native-elements";
 import { TouchableOpacity } from "react-native";
 import { useContext } from "react";
 import { NoteContext } from "./NoteApp";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function NoteCard(props) {
   const { NoteArrContext, setNoteArrContext } = useContext(NoteContext);
@@ -35,19 +36,18 @@ export default function NoteCard(props) {
         )}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onDeleteNote(props.id)}>
-        <Text style={styles.deleteButton}>Delete</Text>
+        <MaterialIcons
+          style={styles.deleteButton}
+          name="delete"
+          size={27}
+          color="red"
+        />
       </TouchableOpacity>
     </Card>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 10,
-  },
   cardContainer: {
     marginVertical: 10,
     width: "95%",
@@ -77,44 +77,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     marginTop: 10,
   },
-  lengthCircle: {
-    width: 30,
-    height: 30,
-    borderRadius: 30,
-    backgroundColor: "#f4511e",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  lengthText: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 18,
-  },
-  category: {
-    fontSize: 32,
-    fontWeight: "bold",
-    marginRight: 10,
-    color: "#f4511e",
-  },
-  container1: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 10,
-  },
-  buttonStyle: {
-    backgroundColor: "#f4511e",
-    borderRadius: 50,
-    width: 60,
-    height: 60,
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    left: 300,
-  },
   deleteButton: {
-    color: "red",
-    fontWeight: "bold",
     textAlign: "right",
     marginTop: 10,
   },
