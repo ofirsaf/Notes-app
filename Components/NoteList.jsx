@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Card, Button } from "react-native-elements";
-import { TouchableOpacity } from "react-native";
+import React from "react";
+import { View, StyleSheet } from "react-native";
 import NoteCard from "./NoteCard";
 export default function NoteList(props) {
   return (

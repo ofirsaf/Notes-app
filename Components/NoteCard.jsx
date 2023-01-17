@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Card, Button } from "react-native-elements";
+import { Text, StyleSheet } from "react-native";
+import { Card } from "react-native-elements";
 import { TouchableOpacity } from "react-native";
 import { useContext } from "react";
 import { NoteContext } from "./NoteApp";

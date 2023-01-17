@@ -6,10 +6,9 @@ import {
   Modal,
   Alert,
   Pressable,
-  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import { Card, Button } from "react-native-elements";
+import { Button } from "react-native-elements";
 import CategoryList from "../Components/CategoryList";
 import { ScrollView } from "react-native";
 import { useContext } from "react";
