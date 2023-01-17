@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { Card, Button } from "react-native-elements";
 import { TouchableOpacity } from "react-native";
 import { useContext } from "react";
-import { NoteContext } from "../Componetns/NoteApp";
+import { NoteContext } from "./NoteApp";
 
 export default function NoteCard(props) {
   const { NoteArrContext, setNoteArrContext } = useContext(NoteContext);

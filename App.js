@@ -1,11 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomePage from "./Pages/HomePage";
 import CategoryPage from "./Pages/CategoryPage";
 import NotePage from "./Pages/NotePage";
-import NoteApp from "./Componetns/NoteApp";
+import NoteApp from "./Components/NoteApp";
 
 const Stack = createNativeStackNavigator();
 

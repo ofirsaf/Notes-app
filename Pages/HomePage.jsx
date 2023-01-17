@@ -10,10 +10,10 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { Card, Button } from "react-native-elements";
-import CategoryList from "../Componetns/CategoryList";
+import CategoryList from "../Components/CategoryList";
 import { ScrollView } from "react-native";
 import { useContext } from "react";
-import { NoteContext } from "../Componetns/NoteApp";
+import { NoteContext } from "../Components/NoteApp";
 
 export default function HomePage(props) {
   const { CategoryArrContext, NoteArrContext } = useContext(NoteContext);
@@ -105,36 +105,7 @@ const styles = StyleSheet.create({
     color: "#03A9F4",
     fontFamily: "AppleSDGothicNeo-Bold",
   },
-  categoriesContainer: {
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 10,
-  },
-  categoryCard: {
-    width: "60%",
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 20,
-    backgroundColor: "#03A9F4",
-  },
-  categoryContainer: {
-    alignItems: "center",
-    flexDirection: "row",
-    marginBottom: 20,
-    justifyContent: "center",
-  },
-  categoryText: {
-    fontSize: 30,
-    marginRight: 10,
-    fontFamily: "AppleSDGothicNeo-Bold",
-    color: "white",
-  },
-  categoryCount: {
-    fontSize: 30,
-    fontFamily: "AppleSDGothicNeo-Bold",
-    color: "white",
-  },
+
   buttonStyle: {
     backgroundColor: "#f4511e",
     borderRadius: 50,
@@ -170,7 +141,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     elevation: 2,
-    margin: 2,
+    margin: 3,
   },
   buttonOpen: {
     backgroundColor: "#2196F3",

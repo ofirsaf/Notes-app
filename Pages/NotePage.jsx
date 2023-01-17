@@ -2,7 +2,7 @@ import { View, TextInput } from "react-native";
 import { Input, Button, Card } from "react-native-elements";
 import React, { useState } from "react";
 import { TouchableWithoutFeedback, Keyboard } from "react-native";
-import { NoteContext } from "../Componetns/NoteApp";
+import { NoteContext } from "../Components/NoteApp";
 import { useContext } from "react";
 export default function NotePage(props) {
   const { NoteArrContext, setNoteArrContext } = useContext(NoteContext);

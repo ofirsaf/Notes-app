@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Card, Button } from "react-native-elements";
-import { TouchableOpacity } from "react-native";
-import NoteList from "../Componetns/NoteList";
+import { Button } from "react-native-elements";
+import NoteList from "../Components/NoteList";
 import { ScrollView } from "react-native";
 import { useContext } from "react";
-import { NoteContext } from "../Componetns/NoteApp";
+import { NoteContext } from "../Components/NoteApp";
 
 const CategoryPage = (props) => {
   const { NoteArrContext } = useContext(NoteContext);
@@ -50,49 +49,6 @@ const CategoryPage = (props) => {
 };
 export default CategoryPage;
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 10,
-  },
-  cardContainer: {
-    marginVertical: 10,
-    width: "95%",
-    marginBottom: 20,
-  },
-  cardTitle: {
-    fontSize: 30,
-    fontWeight: "bold",
-    fontFamily: "AppleSDGothicNeo-Bold",
-    textAlign: "center",
-    marginBottom: 10,
-  },
-  cardDate: {
-    fontSize: 15,
-    fontWeight: "bold",
-    fontFamily: "AppleSDGothicNeo-Bold",
-    color: "#f4511e",
-    marginBottom: 10,
-  },
-  cardBody: {
-    marginVertical: 10,
-    fontSize: 20,
-    fontFamily: "AppleSDGothicNeo-Bold",
-  },
-  readMore: {
-    color: "#007bff",
-    textAlign: "right",
-    marginTop: 10,
-  },
-  lengthCircle: {
-    width: 30,
-    height: 30,
-    borderRadius: 30,
-    backgroundColor: "#f4511e",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   lengthText: {
     color: "white",
     fontWeight: "bold",
