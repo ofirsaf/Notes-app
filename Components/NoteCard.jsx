@@ -1,27 +1,30 @@
 import React, { useState } from "react";
-import { Text, StyleSheet } from "react-native";
-import { Card } from "react-native-elements";
-import { TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { Card, Button } from "react-native-elements";
+import { TouchableOpacity, Image } from "react-native";
 import { useContext } from "react";
-import { NoteContext } from "./NoteApp";
-import { MaterialIcons } from "@expo/vector-icons";
+import { NoteContext } from "../Components/NoteApp";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default function NoteCard(props) {
   const { NoteArrContext, setNoteArrContext } = useContext(NoteContext);
-
   const [expandedCard, setExpandedCard] = useState(null);
-
   const handleCardPress = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
   };
+
   const onDeleteNote = (Number) => {
     setNoteArrContext(NoteArrContext.filter((note) => note.id !== Number));
   };
-
   return (
     <Card containerStyle={styles.cardContainer}>
       <Text style={styles.cardDate}>{props.item.date}</Text>
       <Text style={styles.cardTitle}>{props.item.title}</Text>
+      <View style={styles.imageContainer}>
+        {props.item.image && (
+          <Image source={{ uri: props.item.image }} style={styles.image} />
+        )}
+      </View>
       <TouchableOpacity onPress={() => handleCardPress(props.index)}>
         <Text style={styles.cardBody}>
           {expandedCard === props.index
@@ -36,11 +39,13 @@ export default function NoteCard(props) {
         )}
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onDeleteNote(props.id)}>
-        <MaterialIcons
+        <Icon
           style={styles.deleteButton}
+          type="font-awesome"
           name="delete"
-          size={27}
-          color="red"
+          color="#f50"
+          size={20}
+          containerStyle={{ paddingRight: 10 }}
         />
       </TouchableOpacity>
     </Card>
@@ -48,6 +53,12 @@ export default function NoteCard(props) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 10,
+  },
   cardContainer: {
     marginVertical: 10,
     width: "95%",
@@ -77,8 +88,54 @@ const styles = StyleSheet.create({
     textAlign: "right",
     marginTop: 10,
   },
+  lengthCircle: {
+    width: 30,
+    height: 30,
+    borderRadius: 30,
+    backgroundColor: "#f4511e",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  lengthText: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  category: {
+    fontSize: 32,
+    fontWeight: "bold",
+    marginRight: 10,
+    color: "#f4511e",
+  },
+  container1: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 10,
+  },
+  buttonStyle: {
+    backgroundColor: "#f4511e",
+    borderRadius: 50,
+    width: 60,
+    height: 60,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+    left: 300,
+  },
   deleteButton: {
+    color: "red",
+    fontWeight: "bold",
     textAlign: "right",
     marginTop: 10,
+  },
+  imageContainer: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+  image: {
+    width: "100%",
+    height: 200,
+    borderRadius: 10,
   },
 });
